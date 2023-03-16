@@ -1,17 +1,17 @@
 package model;
 
 public class Car {
-    Long id;
-    String brand;
-    String model;
-    String engine;
-    String production;
-    String bodyType;
-    Integer seats;
-    Integer doors;
-    Integer speed;
-    Integer amount;
-    Integer status;
+    private Long id;
+    private String brand;
+    private String model;
+    private String engine;
+    private  String production;
+    private String bodyType;
+    private Integer seats;
+    private Integer doors;
+    private Integer speed;
+    private Integer amount;
+    private Integer status;
 
     public Car(Long id, String brand, String model, String engine, String production, String bodyType, Integer seats, Integer doors, Integer speed, Integer amount, Integer status) {
         this.id = id;
@@ -142,17 +142,15 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engine='" + engine + '\'' +
-                ", production='" + production + '\'' +
-                ", bodyType='" + bodyType + '\'' +
-                ", seats=" + seats +
-                ", doors=" + doors +
-                ", speed=" + speed +
-                ", amount=" + amount +
-                '}';
+        return "\nId: " + getId() +
+                "\nBrand: " + getBrand() +
+                "\nModel: " + getModel() +
+                "\nEngine: " + getEngine() +
+                "\nProduction: " + getProduction() +
+                "\nBody type: " + getBodyType() +
+                "\nSeats: " + getSeats() +
+                "\nDoors: " + getDoors() +
+                "\nSpeed: " + getSpeed() +
+                "\nAmount: " + getAmount() + "\n";
     }
 }

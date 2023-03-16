@@ -3,13 +3,13 @@ package model;
 import java.time.LocalDate;
 
 public class Customer {
-    Long id;
-    String name;
-    String surname;
-    LocalDate birthdate;
-    String fin;
-    String serialNumber;
-    Long carId;
+    private Long id;
+    private String name;
+    private String surname;
+    private LocalDate birthdate;
+    private String fin;
+    private String serialNumber;
+    private Long carId;
 
     public Customer(Long id, String name, String surname, LocalDate birthdate, String fin, String serialNumber, Long carId) {
         this.id = id;
@@ -24,12 +24,13 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String surname, LocalDate birthdate, String fin, String serialNumber) {
+    public Customer(String name, String surname, LocalDate birthdate, String fin, String serialNumber, Long carId) {
         this.name = name;
         this.surname = surname;
         this.birthdate = birthdate;
         this.fin = fin;
         this.serialNumber = serialNumber;
+        this.carId = carId;
     }
 
     public Long getId() {
@@ -86,14 +87,12 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthdate=" + birthdate +
-                ", fin='" + fin + '\'' +
-                ", serialNumber='" + serialNumber + '\'' +
-                ", carId=" + carId +
-                '}';
+        return "\nId: " + getId() +
+                "\nName: " + getName() +
+                "\nSurname: " + getSurname() +
+                "\nBirthdate: " + getBirthdate() +
+                "\nFin: " + getFin() +
+                "\nSerial number: " + getSerialNumber() +
+                "\nCar id: " + getCarId() + "\n";
     }
 }

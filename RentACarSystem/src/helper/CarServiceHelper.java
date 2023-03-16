@@ -22,12 +22,4 @@ public class CarServiceHelper {
         return new Car(brand, model, engine, production, bodyType, seats, doors, speed, amount, 1);
     }
 
-    public static Customer fillCustomer() {
-        String name = inputTypeString("Enter the name: ");
-        String surname = inputTypeString("Enter the surname: ");
-        LocalDate birthdate = LocalDate.parse(inputTypeString("Enter the birthdate: "));
-        String fin = inputTypeString("Enter the fin: ");
-        String serialNumber = inputTypeString("Enter the serial number: ");
-        return new Customer(name, surname, birthdate, fin, serialNumber);
-    }
 }

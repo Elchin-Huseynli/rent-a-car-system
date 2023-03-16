@@ -19,33 +19,16 @@ public class CarServiceImpl implements CarService {
         carRepository = new CarRepositoryImpl();
     }
 
-
     @Override
     public void addCar() {
         carRepository.addCar(fillCar());
     }
 
     @Override
-    public void addCustomer() {
-        carRepository.addCustomer(fillCustomer());
-    }
-
-    @Override
     public void findCars() {
         List<Car> cars = carRepository.cars();
-        System.out.println(cars);
+        cars.stream()
+                .forEach(System.out::println);
     }
 
-    @Override
-    public void findCustomers() {
-        List<Customer> customers = carRepository.customers();
-        System.out.println(customers);
-    }
-
-    @Override
-    public void orderCar() {
-        findCars();
-        Integer option = InputUtil.inputTypeInteger("Enter the car id: ");
-        addCustomer();
-    }
 }

@@ -1,5 +1,6 @@
 package service.impl;
 
+import exception.InvalidIdException;
 import exception.InvalidOptionException;
 import exception.NotFoundCarException;
 import exception.NotFoundCustomerException;
@@ -15,16 +16,17 @@ public class ManagementServiceImpl implements ManagementService {
         while (true) {
             try {
                 CarServiceImpl carService = new CarServiceImpl();
+                CustomerServiceImpl customerService = new CustomerServiceImpl();
                 while (true) {
                     Integer option = entry();
                     switch (option) {
                         case 0:
                             System.exit(-1);
                         case 1:
-                            carService.orderCar();
+                            customerService.addCustomer();
                             break;
                         case 2:
-                            carService.findCustomers();
+                            customerService.findCustomers();
                             break;
                         case 3:
                             carService.addCar();
@@ -33,7 +35,8 @@ public class ManagementServiceImpl implements ManagementService {
                             throw new InvalidOptionException();
                     }
                 }
-            } catch (InputMismatchException | InvalidOptionException | NotFoundCarException | NotFoundCustomerException e) {
+            } catch (InputMismatchException | InvalidOptionException | NotFoundCarException | NotFoundCustomerException |
+                     InvalidIdException e) {
                 System.out.println(e.getMessage());
             }
         }
